@@ -506,9 +506,14 @@ ol {
   transform-origin: top;
   transition: transform 1.4s var(--ease-out) 0.15s;
 }
-.timeline.is-in::before,
-.js .timeline.is-in::before {
+/* the line draws itself as soon as any entry has revealed */
+.js .timeline:has(.entry.is-in)::before {
   transform: scaleY(1);
+}
+@supports not selector(:has(*)) {
+  .js .timeline::before {
+    transform: scaleY(1);
+  }
 }
 
 .entry {
@@ -853,6 +858,9 @@ ol {
 /* ------------------------------------------------------------------ */
 /*  Reveal choreography                                                 */
 /*  Visible by default; JS gates the pre-hidden state.                  */
+/*  Wipe clip lives on CHILDREN, never on the observed element itself:  */
+/*  a fully clip-path-hidden element has zero intersection area, and   */
+/*  the observer would never fire — a deadlock.                          */
 /* ------------------------------------------------------------------ */
 
 .js [data-reveal] {
@@ -860,16 +868,20 @@ ol {
   transform: translateY(26px);
   transition:
     opacity 0.75s var(--ease-out) var(--d, 0ms),
-    transform 0.75s var(--ease-out) var(--d, 0ms),
-    clip-path 0.85s var(--ease-out) var(--d, 0ms);
+    transform 0.75s var(--ease-out) var(--d, 0ms);
 }
 .js [data-reveal="wipe"] {
   transform: none;
+}
+.js [data-reveal="wipe"] > * {
   clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.85s var(--ease-out) var(--d, 0ms);
 }
 .js [data-reveal].is-in {
   opacity: 1;
   transform: none;
+}
+.js [data-reveal="wipe"].is-in > * {
   clip-path: inset(0 0 -8% 0);
 }
 
