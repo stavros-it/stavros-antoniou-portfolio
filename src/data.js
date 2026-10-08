@@ -11,7 +11,7 @@ export const profile = {
 export const about = [
   "I am an IT Specialist with over 14 years of experience managing and securing complex platforms. With a Master's in Networking and a background in Electrical Engineering, I take a ground-up approach to technology — ensuring high-level architecture and daily operational support work effectively together.",
   "My focus is on end-to-end reliability. I enjoy solving technical challenges and staying hands-on, leveraging my hardware and software knowledge to build stable, secure environments that meet critical business needs.",
-  "Off the clock, I'm on Crete's mountains and in its sea — hiking, mountaineering, snorkelling and SUP — or playing games across every era, from retro consoles to tabletop RPG campaigns.",
+  "Off the clock, I'm on Crete's mountains and in its sea — hiking, mountaineering, snorkelling and SUP — or deep in a game, from PC and console titles to retro systems and tabletop RPG campaigns.",
 ];
 
 export const experience = [
