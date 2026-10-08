@@ -11,6 +11,8 @@ colors:
   line: "rgba(132,152,179,0.22)"
   line-soft: "rgba(132,152,179,0.12)"
   contour-blue: "#78A4C8"
+  scrollbar-thumb: "#24344E"
+  scrollbar-thumb-hover: "#33507A"
 typography:
   display:
     fontFamily: "Archivo, sans-serif"
@@ -80,6 +82,7 @@ A single-hue dark palette with one signal accent; every neutral is tinted from t
 - **Night Ground** (#070B14): page background.
 - **Survey Hairline** (rgba(132,152,179,0.22)): rules, timeline spine, list dividers.
 - **Faint Hairline** (rgba(132,152,179,0.12)): secondary dividers, scrolled nav border.
+- **Rail Steel** (#24344E, hover #33507A): the themed scrollbar thumb — a browser surface, part of the system.
 
 ### Named Rules
 **The One Signal Rule.** Teal appears only where something is true, actionable, or measured: a link, a focus ring, a coordinate, one contour band. If teal decorates, it is wrong.
@@ -98,7 +101,7 @@ A single-hue dark palette with one signal accent; every neutral is tinted from t
 - **Display** (800, clamp(3.2rem→6rem), LH 0.96, stretch 115%, uppercase): the hero name. Second line is stroke-only.
 - **Section Title** (700, clamp(1.9rem→2.7rem), stretch 108%): each section's single heading. No eyebrows, no numbers.
 - **Body** (400/500, 1.05rem, LH 1.65, measure ≤68ch): copy.
-- **Data** (400, 0.72–0.85rem, tabular): dates, periods, coordinates, tags, footers. Letter-spacing up to 0.22em on uppercase labels.
+- **Data** (400, 0.68–0.95rem, tabular): dates, periods, coordinates, tags, nav links, footers, colophon. Letter-spacing up to 0.22em on uppercase labels.
 
 ### Named Rules
 **The Data-Only Mono Rule.** Martian Mono is earned by content: a number, a date, an ID, a coordinate. Mono used for "technical vibe" is a costume and gets replaced.
