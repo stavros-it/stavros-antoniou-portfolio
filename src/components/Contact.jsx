@@ -58,6 +58,17 @@ export default function Contact() {
             Back to top ↑
           </a>
         </div>
+        <p className="footer__colophon">
+          Type set in{" "}
+          <a href="./OFL-Archivo.txt" target="_blank" rel="noopener noreferrer">
+            Archivo
+          </a>{" "}
+          and{" "}
+          <a href="./OFL-MartianMono.txt" target="_blank" rel="noopener noreferrer">
+            Martian Mono
+          </a>
+          , both under the SIL Open Font License 1.1.
+        </p>
       </footer>
     </>
   );

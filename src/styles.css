@@ -859,6 +859,24 @@ ol {
   color: var(--accent);
 }
 
+.footer__colophon {
+  max-width: 74rem;
+  margin: 1rem auto 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+.footer__colophon a {
+  color: var(--ink-2);
+  text-decoration-color: rgba(83, 229, 220, 0.4);
+}
+.footer__colophon a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
 /* ------------------------------------------------------------------ */
 /*  Reveal choreography                                                 */
 /*  Visible by default; JS gates the pre-hidden state.                  */
