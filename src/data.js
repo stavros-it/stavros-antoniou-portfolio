@@ -15,7 +15,7 @@ export const about = [
 
 export const experience = [
   {
-    role: "IT Associate — Team.Blue Greece · Enartia",
+    role: "IT Support Engineer",
     company: "team.blue",
     type: "Full-time · Remote",
     start: "Jul 2023",
