@@ -410,6 +410,26 @@ ol {
   margin-bottom: clamp(2rem, 5vh, 3rem);
 }
 
+.section__rule {
+  position: absolute;
+  top: clamp(4.5rem, 10vh, 8.5rem);
+  left: var(--gutter);
+  right: var(--gutter);
+  max-width: 74rem;
+  margin: 0 auto;
+  height: 1px;
+  background: var(--line-soft);
+}
+.section__rule::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+}
+
 /* ------------------------------------------------------------------ */
 /*  About                                                              */
 /* ------------------------------------------------------------------ */

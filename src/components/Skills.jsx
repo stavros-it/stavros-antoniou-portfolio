@@ -3,6 +3,7 @@ import { skills } from "../data.js";
 export default function Skills() {
   return (
     <section className="section skills" id="skills" aria-labelledby="skills-title">
+      <div className="section__rule" aria-hidden="true" data-parallax="0.05" />
       <div className="section__inner">
         <h2 className="section__title" id="skills-title" data-reveal>
           Skills

@@ -3,6 +3,7 @@ import { about, profile } from "../data.js";
 export default function About() {
   return (
     <section className="section about" id="about" aria-labelledby="about-title">
+      <div className="section__rule" aria-hidden="true" data-parallax="0.06" />
       <div className="section__inner">
         <h2 className="section__title" id="about-title" data-reveal>
           About
