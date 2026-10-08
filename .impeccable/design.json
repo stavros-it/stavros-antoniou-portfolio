@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T16:00:00Z",
+  "title": "Design System: Stavros Antoniou Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Survey Ink", "canonical": "#EAF0F9" },
+      "ink-2": { "role": "neutral", "displayName": "Dusk Ink", "canonical": "#ADBED6" },
+      "ink-3": { "role": "neutral", "displayName": "Haze Ink", "canonical": "#8498B3" },
+      "bg": { "role": "neutral", "displayName": "Night Ground", "canonical": "#070B14" },
+      "accent": { "role": "primary", "displayName": "Signal Teal", "canonical": "#53E5DC", "tonalRamp": ["#031B19", "#06322E", "#0A4A45", "#177770", "#2BA9A1", "#53E5DC", "#8FEDE6", "#C8F7F3"] },
+      "accent-ink": { "role": "primary", "displayName": "Teal Deep Ink", "canonical": "#06322E" },
+      "line": { "role": "neutral", "displayName": "Survey Hairline", "canonical": "rgba(132,152,179,0.22)" },
+      "line-soft": { "role": "neutral", "displayName": "Faint Hairline", "canonical": "rgba(132,152,179,0.12)" },
+      "contour-blue": { "role": "tertiary", "displayName": "Contour Blue", "canonical": "#78A4C8", "tonalRamp": ["#0B141F", "#1B2A3C", "#2C4258", "#3E5A76", "#516F87", "#6889A8", "#88A9C6", "#B3CCE0"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name only; Archivo 800, stretch 115%, uppercase, second line stroke-only." },
+      "section-title": { "displayName": "Section Title", "purpose": "The single heading of each section; Archivo 700, stretch 108%." },
+      "body": { "displayName": "Body", "purpose": "Prose; Archivo 400/500, measure <= 68ch." },
+      "data": { "displayName": "Data", "purpose": "Facts only: dates, coordinates, IDs, tags, footers. Martian Mono, tabular-nums." }
+    },
+    "shadows": [
+      { "name": "cta-hover-lift", "value": "4px 10px 24px rgba(83,229,220,0.18)", "purpose": "Primary button hover lift — the only shadow in the system, state-response only." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "All reveals, parallax smoothing (lerp 0.12), and transitions." },
+      { "name": "reveal-rise", "value": "translateY(26px), 26px over 0.75s", "purpose": "Default reveal: rise + fade from an already-visible default, JS-gated." },
+      { "name": "reveal-wipe", "value": "clip-path inset(0 0 100% 0) to inset(0 0 -8% 0), 0.85s", "purpose": "Timeline and project entries; clip lives on children so the observer can see the element." },
+      { "name": "scroll-cue", "value": "translateX sweep, 2.6s infinite", "purpose": "Hero scroll cue line; disabled under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "grid-collapse", "value": "900px" },
+      { "name": "nav-minimal", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Connect CTA)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The page's single filled action: Connect on LinkedIn.",
+      "html": "<a class=\"ds-cta\" href=\"#\">Connect on LinkedIn <svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"M17.2 6.8 21.4 12l-4.2 5.2h-3.1l2.9-3.8H4.9v-2.8h12.1l-2.9-3.8Z\"/></svg></a>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; gap: 0.8rem; padding: 1rem 2rem; background: #53E5DC; color: #06322E; font: 700 1.05rem Archivo, sans-serif; text-decoration: none; transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s cubic-bezier(0.22,1,0.36,1); } .ds-cta:hover { transform: translateY(-2px); box-shadow: 4px 10px 24px rgba(83,229,220,0.18); } .ds-cta:focus-visible { outline: 2px solid #53E5DC; outline-offset: 3px; }"
+    },
+    {
+      "name": "Outline Button (Nav Connect)",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Teal-outlined quiet action in the fixed nav.",
+      "html": "<a class=\"ds-navcta\" href=\"#\">Connect</a>",
+      "css": ".ds-navcta { display: inline-flex; align-items: center; padding: 0.5rem 1.05rem; border: 1px solid #53E5DC; color: #53E5DC; font: 600 0.92rem Archivo, sans-serif; text-decoration: none; transition: background-color 0.2s, color 0.2s; } .ds-navcta:hover { background: #53E5DC; color: #06322E; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "description": "Fixed header: monogram + name left, section links and Connect right; gains solid ground once scrolled.",
+      "html": "<header class=\"ds-nav ds-nav--scrolled\"><a class=\"ds-nav__monogram\" href=\"#\">Stavros Antoniou</a><nav class=\"ds-nav__links\"><a class=\"ds-nav__link is-active\" href=\"#\">About</a><a class=\"ds-nav__link\" href=\"#\">Experience</a><a class=\"ds-navcta\" href=\"#\">Connect</a></nav></header>",
+      "css": ".ds-nav { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 2rem; font-family: Archivo, sans-serif; } .ds-nav--scrolled { background: rgba(7,11,20,0.92); border-bottom: 1px solid rgba(132,152,179,0.12); } .ds-nav__monogram { color: #EAF0F9; font-weight: 600; font-size: 0.95rem; text-decoration: none; } .ds-nav__links { display: flex; align-items: center; gap: 1.4rem; } .ds-nav__link { color: #ADBED6; font-size: 0.92rem; text-decoration: none; } .ds-nav__link.is-active { color: #53E5DC; } .ds-navcta { display: inline-flex; padding: 0.5rem 1.05rem; border: 1px solid #53E5DC; color: #53E5DC; font-size: 0.92rem; font-weight: 600; text-decoration: none; }"
+    },
+    {
+      "name": "Timeline Entry",
+      "kind": "card",
+      "description": "Experience record: mono period column, role with teal company, summary, middot tag line; hairline spine with teal diamond.",
+      "html": "<li class=\"ds-entry\"><div class=\"ds-entry__period\">Jul 2023 — Present</div><div class=\"ds-entry__body\"><h3 class=\"ds-entry__role\">IT Associate <span class=\"ds-entry__company\">· team.blue</span></h3><p class=\"ds-entry__summary\">Driving the regional implementation of corporate IT strategy.</p><p class=\"ds-entry__tags\">IT Service Management · ISO 27001</p></div></li>",
+      "css": ".ds-entry { display: grid; grid-template-columns: 170px 1fr; gap: 2rem; padding: 1.8rem 0 1.8rem 2rem; border-bottom: 1px solid rgba(132,152,179,0.12); position: relative; } .ds-entry::before { content: ''; position: absolute; left: -3.5px; top: 2.2rem; width: 8px; height: 8px; background: #070B14; border: 1px solid #53E5DC; transform: rotate(45deg); } .ds-entry__period { font: 400 0.82rem 'Martian Mono', monospace; color: #ADBED6; } .ds-entry__role { font: 650 1.18rem Archivo, sans-serif; color: #EAF0F9; margin: 0; } .ds-entry__company { color: #53E5DC; font-weight: 500; } .ds-entry__summary { color: #ADBED6; margin: 0.75rem 0 0; max-width: 60ch; } .ds-entry__tags { font: 400 0.72rem 'Martian Mono', monospace; color: #8498B3; margin: 0.9rem 0 0; }"
+    },
+    {
+      "name": "Fact Row (About ledger)",
+      "kind": "custom",
+      "description": "Definition-list ledger used in the About aside: label left, value right, hairline dividers.",
+      "html": "<dl class=\"ds-facts\"><div class=\"ds-facts__row\"><dt>Field</dt><dd>IT &amp; Network Infrastructure</dd></div><div class=\"ds-facts__row\"><dt>Practice since</dt><dd class=\"ds-facts__mono\">2010</dd></div></dl>",
+      "css": ".ds-facts { border-top: 1px solid rgba(132,152,179,0.22); margin: 0; } .ds-facts__row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid rgba(132,152,179,0.12); } .ds-facts__row dt { font: 400 0.85rem Archivo, sans-serif; color: #8498B3; } .ds-facts__row dd { margin: 0; font: 500 0.95rem Archivo, sans-serif; color: #EAF0F9; } .ds-facts__mono { font: 400 0.85rem 'Martian Mono', monospace; color: #53E5DC; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Network Is the Terrain",
+    "overview": "A personal portfolio built as a night survey of Crete: the hero is a living topographic contour field drawn as network infrastructure, and every section below reads like the measured plates of an engineering report. The interface recedes; the terrain and the record lead. The system is dark and quiet so that two things can be loud: the teal signal accent and the facts. Depth comes from layered linework and staggered motion, never from shadows or glass.",
+    "keyCharacteristics": [
+      "Deep ink-navy ground with one electric teal accent reserved for signals",
+      "Crisp geometric canvas/SVG linework as the only imagery",
+      "Archivo semi-expanded caps for display; Martian Mono only for real data",
+      "Parallax and reveal choreography with exponential ease-out; reduced-motion collapses to static",
+      "Square corners everywhere; the system owns zero border radii"
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Teal appears only where something is true, actionable, or measured. If teal decorates, it is wrong.", "section": "colors" },
+      { "name": "The No-Pure-Gray Rule", "body": "Every text and line color is tinted toward the terrain blue. A pure gray on this page is a bug.", "section": "colors" },
+      { "name": "The Data-Only Mono Rule", "body": "Martian Mono is earned by content: a number, a date, an ID, a coordinate. Mono for technical vibe is a costume.", "section": "typography" },
+      { "name": "The Linework-Over-Glow Rule", "body": "Depth comes from drawn lines and layered parallax. Glows, halos, and blur panels do not exist here.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every neutral tinted toward the terrain blue; body text >= 4.5:1 on the ground.",
+      "Do use Martian Mono only for real data — dates, coordinates, IDs, tags.",
+      "Do let the canvas rest: fewer, brighter contour bands beat many faint ones.",
+      "Do gate hidden pre-states behind the .js class so the page is fully readable without JavaScript."
+    ],
+    "donts": [
+      "Don't add eyebrows/kickers above headings, section numbers, or icon-in-box card grids.",
+      "Don't introduce gradients on text, glass blur, glow halos, or side-stripe borders.",
+      "Don't load any third-party font, script, or tracker; everything ships from the site's own origin.",
+      "Don't place contact information other than location and the LinkedIn link; no email, phone, or address."
+    ]
+  }
+}
