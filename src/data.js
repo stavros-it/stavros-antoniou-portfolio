@@ -195,7 +195,7 @@ export const skills = [
   {
     domain: "Modern Practice",
     lead: "Applying the same rigor to new tooling.",
-    items: ["AI Prompting", "Prompt Engineering", "Cybersecurity"],
+    items: ["AI Prompting", "Vibe Coding", "Prompt Engineering", "Cybersecurity"],
   },
 ];
 
