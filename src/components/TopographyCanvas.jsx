@@ -94,16 +94,22 @@ function marchSegments(field, cols, rows, step, threshold, out) {
 /*  Contour palette — survey-map logic: index contours every 4th.     */
 /* ------------------------------------------------------------------ */
 
-const LEVELS = [0.36, 0.41, 0.46, 0.51, 0.56, 0.61, 0.66, 0.71];
-const LEVEL_COLORS = [
-  [70, 120, 160], // 0.36 farthest
-  [80, 133, 172],
-  [92, 148, 184],
-  [104, 162, 195], // index
-  [92, 148, 184],
-  [80, 133, 172],
-  [70, 120, 160],
-  [60, 108, 148], // 0.71
+const LEVELS = [0.4, 0.421, 0.442, 0.463, 0.484, 0.505, 0.526, 0.547, 0.568, 0.589, 0.61, 0.631];
+/* Per-level stroke style: [r, g, b, alpha, width]. The 0.505 band is the
+   teal "signal contour" — the map's one accent line. */
+const LEVEL_STYLES = [
+  [104, 148, 184, 0.3, 0.9],
+  [112, 156, 192, 0.38, 0.9],
+  [120, 166, 204, 0.46, 1],
+  [126, 172, 205, 0.54, 1],
+  [132, 180, 212, 0.6, 1.1],
+  [83, 229, 220, 0.85, 2],
+  [132, 180, 212, 0.6, 1.1],
+  [126, 172, 205, 0.54, 1],
+  [120, 166, 204, 0.46, 1],
+  [112, 156, 192, 0.38, 0.9],
+  [104, 148, 184, 0.3, 0.9],
+  [96, 140, 176, 0.26, 0.9],
 ];
 
 export default function TopographyCanvas() {
@@ -140,7 +146,7 @@ export default function TopographyCanvas() {
     };
 
     const buildField = () => {
-      const ns = 0.0042 * (18 / step); // world scale tied to cell size
+      const ns = 0.03 * (18 / step); // world scale tied to cell size: ~2-4 noise cells across the field
       const bx = smoothPtr.x * cols * 0.9;
       const by = smoothPtr.y * rows * 0.9;
       const sigma = 5.2;
@@ -171,10 +177,9 @@ export default function TopographyCanvas() {
       for (let i = 0; i < LEVELS.length; i++) {
         segs.length = 0;
         marchSegments(field, cols, rows, step, LEVELS[i], segs);
-        const [r, g, b] = LEVEL_COLORS[i];
-        const isIndex = i % 4 === 3;
-        ctx.strokeStyle = `rgba(${r},${g},${b},${isIndex ? 0.5 : 0.22})`;
-        ctx.lineWidth = isIndex ? 1.4 : 1;
+        const [r, g, b, a, w] = LEVEL_STYLES[i];
+        ctx.strokeStyle = `rgba(${r},${g},${b},${a})`;
+        ctx.lineWidth = w;
         ctx.beginPath();
         for (let s = 0; s < segs.length; s += 4) {
           ctx.moveTo(segs[s], segs[s + 1]);
