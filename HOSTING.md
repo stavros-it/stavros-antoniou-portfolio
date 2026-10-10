@@ -99,7 +99,7 @@ Because the site is static, the classic attack surfaces (SQL injection, compromi
 - **No contact form** — LinkedIn is the only contact channel; nothing for bots to spam or exploit.
 - **No personal data beyond public professional facts** — no email, phone, or address anywhere (also good for GDPR).
 - **Fonts self-hosted** — no third-party font CDN requests (privacy + fewer supply-chain dependencies + faster).
-- **Zero third-party scripts** — no analytics, no trackers; the only outbound link is LinkedIn.
+- **Minimal third-party scripts** — the only external script is the cookieless Cloudflare Web Analytics beacon (no cookies, no personal data, no trackers); the only outbound link is LinkedIn.
 
 ### Keep it secure over time
 
