@@ -744,6 +744,9 @@ ol {
   font-size: 0.8rem;
   color: var(--accent);
 }
+.project__result + .project__result {
+  margin-top: 0.35rem;
+}
 
 /* ------------------------------------------------------------------ */
 /*  Contact & footer                                                    */

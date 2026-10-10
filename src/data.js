@@ -250,8 +250,9 @@ export const projects = [
     period: "2003 — 2004",
     place: "Technological Educational Institute of Crete",
     summary:
-      "Research and development of a small-object sorting robotic system — step motors, pneumatics, proximity sensors, self-designed PCBs, and an Omron CJ-series PLC with ladder logic.",
+      "Bachelor thesis: research and development of a small-object sorting robotic system — step motors, pneumatics, proximity sensors, self-designed PCBs, and an Omron CJ-series PLC with ladder logic.",
     result: "Mark: 10 / 10 (A+)",
+    resultNote: "Working prototype of an automated small-object sorting cell",
   },
   {
     name: "Network Under Threat — Simulation & Monitoring",

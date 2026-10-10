@@ -26,6 +26,7 @@ export default function Projects() {
               <p className="project__place">{p.place}</p>
               <p className="project__summary">{p.summary}</p>
               <p className="project__result">{p.result}</p>
+              {p.resultNote && <p className="project__result">{p.resultNote}</p>}
             </article>
           ))}
         </div>
