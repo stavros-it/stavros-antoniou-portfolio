@@ -1,5 +1,8 @@
 name = "stavros-antoniou-portfolio"
 compatibility_date = "2026-10-10"
+main = "worker.js"
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
+run_worker_first = true
