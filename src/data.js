@@ -259,7 +259,7 @@ export const projects = [
     period: "2008",
     place: "Kingston University",
     summary:
-      "Master's dissertation: a virtualized corporate network subjected to simulated DoS and DDoS attacks with Metasploit and Backtrack, then hardened with open-source and commercial security gateways.",
+      "Master's dissertation: a virtualized corporate network subjected to simulated DoS and DDoS attacks and payload-based exploits with Metasploit and Backtrack, then hardened with open-source and commercial security gateways.",
     result: "Scalable methodology for evaluating network resilience",
   },
   {
