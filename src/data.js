@@ -223,6 +223,11 @@ export const education = [
 
 export const certifications = [
   {
+    name: "FitSM Foundation",
+    issuer: "APMG International",
+    year: "2026",
+  },
+  {
     name: "AI Prompt Mastery: Crafting Effective Inputs for Maximum Impact",
     issuer: "Go1",
     year: "2025",
