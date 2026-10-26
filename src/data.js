@@ -226,6 +226,7 @@ export const certifications = [
     name: "FitSM Foundation",
     issuer: "APMG International",
     year: "2026",
+    url: "https://www.credly.com/badges/ab8722a2-70a8-443d-b549-b2bda57ae02f/",
   },
   {
     name: "AI Prompt Mastery: Crafting Effective Inputs for Maximum Impact",
@@ -236,6 +237,7 @@ export const certifications = [
     name: "Introduction to Cybersecurity",
     issuer: "Cisco",
     year: "2023",
+    url: "https://www.credly.com/badges/b8c255e9-d9a2-4721-ac55-5684efd85959",
   },
   {
     name: "MTCNA — MikroTik Certified Network Associate",

@@ -694,6 +694,15 @@ ol {
   color: var(--ink-3);
   font-weight: 400;
 }
+.certs__verify {
+  margin-left: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 
 /* ------------------------------------------------------------------ */
 /*  Projects                                                            */
