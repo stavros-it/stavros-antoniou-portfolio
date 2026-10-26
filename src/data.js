@@ -230,7 +230,7 @@ export const certifications = [
   },
   {
     name: "AI Prompt Mastery: Crafting Effective Inputs for Maximum Impact",
-    issuer: "Go1",
+    issuer: "Simmons Learning Solutions (via Go1)",
     year: "2025",
   },
   {
