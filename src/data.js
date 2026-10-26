@@ -243,6 +243,7 @@ export const certifications = [
     name: "MTCNA — MikroTik Certified Network Associate",
     issuer: "MikroTik",
     year: "2013",
+    credentialId: "1401NA139",
   },
   {
     name: "Certificate of Proficiency in English (ECPE)",

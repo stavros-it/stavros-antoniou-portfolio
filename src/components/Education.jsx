@@ -31,6 +31,9 @@ export default function Education() {
               <span className="certs__name">
                 {c.name}
                 <span className="certs__issuer"> — {c.issuer}</span>
+                {c.credentialId && (
+                  <span className="certs__id">Credential ID {c.credentialId}</span>
+                )}
                 {c.url && (
                   <a className="certs__verify" href={c.url} target="_blank" rel="noopener noreferrer">
                     Verify

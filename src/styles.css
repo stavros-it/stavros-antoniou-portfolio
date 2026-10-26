@@ -694,6 +694,13 @@ ol {
   color: var(--ink-3);
   font-weight: 400;
 }
+.certs__id {
+  margin-left: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--ink-3);
+}
 .certs__verify {
   margin-left: 0.75rem;
   font-family: var(--font-mono);
